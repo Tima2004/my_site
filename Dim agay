@@ -1,0 +1,25 @@
+CREATE TABLE persons (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    age INTEGER);
+    
+INSERT INTO persons (name, age) VALUES ("Bobby McBobbyFace", 12);
+INSERT INTO persons (name, age) VALUES ("Lucy BoBucie", 25);
+INSERT INTO persons (name, age) VALUES ("Banana FoFanna", 14);
+INSERT INTO persons (name, age) VALUES ("Shish Kabob", 20);
+INSERT INTO persons (name, age) VALUES ("Fluffy Sparkles", 8);
+
+
+CREATE table products (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    person_id INTEGER,
+    name TEXT);
+    
+INSERT INTO hobbies (person_id, name) VALUES (1, "cucumber");
+INSERT INTO hobbies (person_id, name) VALUES (1, "orange");
+INSERT INTO hobbies (person_id, name) VALUES (2, "bananas");
+INSERT INTO hobbies (person_id, name) VALUES (2, "cakes");
+INSERT INTO hobbies (person_id, name) VALUES (3, "pancakes");
+INSERT INTO hobbies (person_id, name) VALUES (3, "apple");
+INSERT INTO hobbies (person_id, name) VALUES (4, "watermelon");
+INSERT INTO hobbies (person_id, name) VALUES (4, "grapefruit");
