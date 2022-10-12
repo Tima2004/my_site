@@ -16,3 +16,29 @@ SELECT persons.name AS "persons_name",
     FROM persons 
     LEFT OUTER JOIN persons sequel 
     ON persons.age = sequel.id;
+_______________________________________________________________________________
+#CARS:
+CREATE TABLE cars (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    model TEXT,
+    company TEXT);
+    
+INSERT iNTO cars (model, company)
+    VALUES ("RS3 coupe", "Audi");
+INSERT INTO cars (model, company)
+    VALUES ("AMG GT3", "Mercedes");
+INSERT INTO cars (model, company)
+    VALUES ("M5 comp", "BMW");
+    
+SELECT * FROM cars;
+    
+ALTER TABLE cars ADD price INTEGER;    
+    
+UPDATE cars SET price = 75000
+    WHERE id = 1;
+UPDATE cars SET price = 89000
+    WHERE id = 2;
+UPDATE cars SET price = 125000
+    WHERE id = 3;
+    
+SELECT * FROM cars;
