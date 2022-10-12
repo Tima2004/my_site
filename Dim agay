@@ -42,3 +42,38 @@ UPDATE cars SET price = 125000
     WHERE id = 3;
     
 SELECT * FROM cars;
+
+________________________________________________________________
+CREATE TABLE computers (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    videocard TEXT,
+    processor TEXT,
+    ram INTEGER,
+    price INTEGER);
+
+INSERT INTO computers (videocard, processor, ram, price)
+    VALUES ("GeForce GTX1070", "Intel i5", "32", "50000");
+INSERT INTO computers (videocard, processor, ram, price)
+    VALUES ("GeForce GTX1080", "Intel i7", "32", "85000");
+INSERT INTO computers (videocard, processor, ram, price)
+    VALUES ("GeForce GTX1060", "Intel i5", "16", "39000");
+INSERT INTO computers (videocard, processor, ram, price)
+    VALUES ("GeForce GTX1050", "Intel i3", "32", "35000");
+INSERT INTO computers (videocard, processor, ram, price)
+    VALUES ("GeForce RTX2070", "Intel i5", "32", "89000");
+INSERT INTO computers (videocard, processor, ram, price)
+    VALUES ("GeForce RTX3070", "Intel i5", "64", "100000");
+INSERT INTO computers (videocard, processor, ram, price)
+    VALUES ("GeForce RTX2070", "Intel i5", "32", "57000");
+INSERT INTO computers (videocard, processor, ram, price)
+    VALUES ("GeForce RTX3090", "Intel i9", "64", "157000");
+    
+SELECT COUNT(*),
+    CASE
+        WHEN price > 99000 THEN "Premium"
+        WHEN price > 84000 THEN "High"
+        WHEN price > 49000 THEN "Medium"
+        WHEN price > 30000 THEN "Law"
+    END as "Lvl_budget"
+FROM computers
+GROUP BY Lvl_budget;
