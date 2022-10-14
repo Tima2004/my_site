@@ -67,6 +67,8 @@ INSERT INTO computers (videocard, processor, ram, price)
     VALUES ("GeForce RTX2070", "Intel i5", "32", "57000");
 INSERT INTO computers (videocard, processor, ram, price)
     VALUES ("GeForce RTX3090", "Intel i9", "64", "157000");
+INSERT INTO computers (videocard, processor, ram, price)
+    VALUES ("GeForce RTX4090", "Intel i10", "128", NULL);
     
 SELECT COUNT(*),
     CASE
@@ -74,6 +76,7 @@ SELECT COUNT(*),
         WHEN price > 84000 THEN "High"
         WHEN price > 49000 THEN "Medium"
         WHEN price > 30000 THEN "Law"
+        WHEN price IS NULL THEN "Out of stock"
     END as "Lvl_budget"
 FROM computers
 GROUP BY Lvl_budget;
